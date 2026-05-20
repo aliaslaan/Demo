@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="Hatay Sound Oto Elektrik & Chip Tuning - Performans ve teknolojinin buluştuğu nokta. Oto ses, chip tuning, oto elektrik.">
+  <title>Hatay Sound | Ana Sayfa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { 'mont': ['Montserrat', 'sans-serif'] },
+          colors: {
+            'dark-bg': '#121212',
+            'neon-blue': '#00d2ff',
+            'neon-orange': '#ff6b00',
+            'card-bg': '#1e1e1e',
+            'soft-white': '#f0f0f0',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-mont text-soft-white bg-dark-bg">
+
+  <!-- NAVBAR -->
+  <nav class="sticky top-0 z-40 bg-dark-bg/90 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-bold tracking-tight">
+        <span class="text-white">HATAY</span><span class="text-neon-blue">SOUND</span>
+      </a>
+      <div class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="index.html" class="text-neon-blue hover:text-white transition">Ana Sayfa</a>
+        <a href="hakkimizda.html" class="text-gray-300 hover:text-white transition">Hakkımızda</a>
+        <a href="hizmetlerimiz.html" class="text-gray-300 hover:text-white transition">Hizmetlerimiz</a>
+        <a href="index.html#iletisim" class="text-gray-300 hover:text-white transition">İletişim</a>
+      </div>
+      <a href="hataysound.html" class="md:hidden text-neon-blue text-sm border border-neon-blue px-3 py-1 rounded-full">QR Menü</a>
+    </div>
+  </nav>
+
+  <!-- HERO SLIDER -->
+  <section id="hero" class="relative w-full h-screen overflow-hidden">
+    <div id="slider-container" class="absolute inset-0 w-full h-full"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-dark-bg/80 flex flex-col items-center justify-center text-center px-4 z-10">
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-3">
+        <span class="text-white drop-shadow-lg">HATAY</span> <span class="text-neon-blue drop-shadow-[0_0_10px_#00d2ff]">SOUND</span>
+      </h1>
+      <p class="text-lg md:text-2xl lg:text-3xl font-light mb-4 text-gray-200">Oto Elektrik & Chip Tuning</p>
+      <p class="text-base md:text-xl text-gray-300 mb-8">"Performans ve Teknolojinin Buluştuğu Nokta"</p>
+      <a href="#hizmetler" class="px-8 py-4 bg-neon-blue text-black font-bold rounded-full text-lg hover:bg-cyan-400 transition-all duration-300 btn-glow">Hizmetlerimizi İncele</a>
+    </div>
+  </section>
+
+  <!-- HAKKIMIZDA ÖZET -->
+  <section class="py-16 md:py-24 px-4 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row items-center gap-10">
+      <div class="md:w-1/2">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 border-l-4 border-neon-blue pl-4">Hakkımızda</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">2010'dan beri Hatay'da oto elektrik, ses sistemleri ve chip tuning alanında güvenilir çözümler sunuyoruz.</p>
+        <a href="hakkimizda.html" class="inline-block mt-4 text-neon-blue hover:underline font-semibold">Daha Fazla Bilgi →</a>
+      </div>
+      <div class="md:w-1/2">
+        <img src="https://images.unsplash.com/photo-1617886903355-9354bb0e0b1e?q=80&w=800&auto=format&fit=crop" alt="Atölye" class="rounded-2xl shadow-2xl border border-gray-700 w-full h-auto" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- HİZMETLER ÖZET -->
+  <section id="hizmetler" class="py-16 md:py-24 px-4 bg-dark-bg/50">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 border-b-2 border-neon-blue inline-block pb-2">Hizmetlerimiz</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="service-card bg-card-bg p-6 rounded-xl shadow-lg">
+          <div class="text-neon-blue text-5xl mb-4">🔊</div>
+          <h3 class="text-xl font-semibold mb-2">Oto Ses Sistemleri</h3>
+          <p class="text-gray-400 text-sm">Premium ses ve görüntü çözümleri.</p>
+        </div>
+        <div class="service-card bg-card-bg p-6 rounded-xl shadow-lg">
+          <div class="text-neon-orange text-5xl mb-4">🚀</div>
+          <h3 class="text-xl font-semibold mb-2">Chip Tuning</h3>
+          <p class="text-gray-400 text-sm">Motor performans yazılımı.</p>
+        </div>
+        <div class="service-card bg-card-bg p-6 rounded-xl shadow-lg">
+          <div class="text-yellow-400 text-5xl mb-4">🔧</div>
+          <h3 class="text-xl font-semibold mb-2">Oto Elektrik</h3>
+          <p class="text-gray-400 text-sm">Arıza tespit ve onarım.</p>
+        </div>
+        <div class="service-card bg-card-bg p-6 rounded-xl shadow-lg">
+          <div class="text-purple-400 text-5xl mb-4">✨</div>
+          <h3 class="text-xl font-semibold mb-2">Gizli Özellik</h3>
+          <p class="text-gray-400 text-sm">Aktivasyon ve kodlama.</p>
+        </div>
+      </div>
+      <a href="hizmetlerimiz.html" class="inline-block mt-8 text-neon-orange hover:underline font-semibold">Tüm Hizmetleri İncele →</a>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section id="iletisim" class="py-16 md:py-24 px-4 max-w-7xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center border-b-2 border-neon-blue inline-block pb-2 mx-auto block w-fit">İletişim</h2>
+    <div class="grid md:grid-cols-2 gap-10">
+      <div class="space-y-6">
+        <div><span class="text-neon-blue text-2xl">📍</span> Cumhuriyet Mah. Atatürk Cad. No:123/A, Antakya/Hatay</div>
+        <div><span class="text-neon-blue text-2xl">📞</span> <a href="tel:+905321234567" class="hover:text-neon-blue">+90 532 123 45 67</a></div>
+        <div><span class="text-neon-blue text-2xl">⏰</span> Pzt-Cmt: 09:00-19:00</div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12773.456789012345!2d36.123456!3d36.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzYusMzYusKwMDgnMjQuMCJOIDM2wrAwOCcyNC4wIkU!5e0!3m2!1str!2str!4v1610000000000" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-xl"></iframe>
+      </div>
+      <div class="bg-card-bg p-6 rounded-xl">
+        <h3 class="text-2xl font-semibold mb-6 text-neon-blue">Bize Ulaşın</h3>
+        <form id="contact-form" class="space-y-4">
+          <input type="text" placeholder="Adınız" required class="w-full px-4 py-3 bg-dark-bg border border-gray-600 rounded-lg focus:outline-none focus:border-neon-blue text-white">
+          <input type="tel" placeholder="Telefon" required class="w-full px-4 py-3 bg-dark-bg border border-gray-600 rounded-lg focus:outline-none focus:border-neon-blue text-white">
+          <textarea rows="4" placeholder="Mesajınız" required class="w-full px-4 py-3 bg-dark-bg border border-gray-600 rounded-lg focus:outline-none focus:border-neon-blue text-white"></textarea>
+          <button type="submit" class="w-full py-3 bg-neon-orange hover:bg-orange-600 text-white font-bold rounded-lg transition btn-orange-glow">Gönder</button>
+        </form>
+        <div id="form-message" class="mt-4 text-center text-green-400 hidden">✅ Mesajınız iletildi!</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-6 text-center border-t border-gray-800 text-gray-500 text-sm">
+    <p>&copy; 2025 Hatay Sound. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <!-- SABİT BUTONLAR -->
+  <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+    <a href="https://wa.me/905321234567" target="_blank" class="bg-green-500 p-4 rounded-full shadow-2xl hover:scale-110 transition"><!-- WhatsApp ikonu --></a>
+    <a href="https://instagram.com/hataysound" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-full shadow-2xl hover:scale-110 transition"><!-- Instagram ikonu --></a>
+  </div>
+
+  <script src="assets/js/slider.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
