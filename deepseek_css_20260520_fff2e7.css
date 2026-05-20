@@ -1,0 +1,30 @@
+/* Genel animasyonlar ve Tailwind override'ları */
+
+.service-card {
+  transition: all 0.3s ease;
+  border: 1px solid #2a2a2a;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px -10px rgba(0, 210, 255, 0.2);
+  border-color: #00d2ff;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 18px rgba(0, 210, 255, 0.6);
+}
+.btn-orange-glow:hover {
+  box-shadow: 0 0 18px rgba(255, 107, 0, 0.6);
+}
+
+/* Slider animasyonu */
+.slider-image {
+  transition: opacity 1.2s ease-in-out;
+}
+
+/* Sabit butonlar */
+.fixed-buttons {
+  z-index: 50;
+}
+
+/* Mobil linktree butonları için ekstra (hataysound.html içinde inline da olabilir) */

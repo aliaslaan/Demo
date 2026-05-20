@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Hatay Sound dijital kartvizit - Hızlı erişim menüsü">
+  <title>Hatay Sound | Hızlı Menü</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { 'mont': ['Montserrat', 'sans-serif'] },
+          colors: {
+            'dark-bg': '#121212',
+            'neon-blue': '#00d2ff',
+            'neon-orange': '#ff6b00',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #121212; touch-action: manipulation; }
+    .link-btn { transition: all 0.2s ease; backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.1); }
+    .link-btn:active { transform: scale(0.97); background-color: rgba(0,210,255,0.2); }
+  </style>
+</head>
+<body class="font-mont text-white flex flex-col items-center justify-center min-h-screen px-4 py-8">
+
+  <div class="w-full max-w-sm mx-auto text-center">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold"><span class="text-white">HATAY</span><span class="text-neon-blue">SOUND</span></h1>
+      <p class="text-gray-400 text-sm mt-1">Dijital Kartvizit</p>
+    </div>
+
+    <div class="space-y-4">
+      <a href="hizmetlerimiz.html" class="link-btn block w-full py-4 bg-white/5 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3">
+        <span>🛠️</span> Hizmetlerimiz
+      </a>
+      <a href="index.html#iletisim" class="link-btn block w-full py-4 bg-white/5 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3">
+        <span>📞</span> İletişim
+      </a>
+      <a href="hakkimizda.html" class="link-btn block w-full py-4 bg-white/5 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3">
+        <span>ℹ️</span> Hakkımızda
+      </a>
+      <a href="https://maps.google.com/?q=Hatay+Sound+Oto+Elektrik" target="_blank" class="link-btn block w-full py-4 bg-white/5 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3">
+        <span>📍</span> Konum Bilgisi
+      </a>
+      <a href="https://wa.me/905321234567?text=Merhaba" target="_blank" class="link-btn block w-full py-4 bg-green-600/20 border-green-500/50 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3">
+        <span>💬</span> WhatsApp Destek
+      </a>
+    </div>
+    <p class="text-gray-600 text-xs mt-8">QR kodu okutarak anında erişin</p>
+  </div>
+
+</body>
+</html>
