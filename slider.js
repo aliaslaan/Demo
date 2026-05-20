@@ -13,9 +13,9 @@
   // Dilediğin kadar görsel ekleyebilir veya mevcut linkleri değiştirebilirsin.
   // ----------------------------------------------------------------------
   const images = [
-    'hsgarage.jpg', // 1. Görsel (Örn: Chip Tuning / Yazılım)
-    'hsgarage1.jpg', // 2. Görsel (Örn: Premium Ses Sistemleri)
-    'hsgarage2.jpg'  // 3. Görsel (Örn: Oto Elektrik / Arıza Tespit)
+    'hsgarage.JPG', 
+    'hsgarage1.JPG',
+    'hsgarage2.JPG'
   ];
 
   let currentIndex = 0;
