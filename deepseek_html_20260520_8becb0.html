@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hatay Sound hizmetleri: Oto ses sistemleri, chip tuning, oto elektrik ve gizli özellik aktivasyonu.">
+  <title>Hizmetlerimiz | Hatay Sound</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { 'mont': ['Montserrat', 'sans-serif'] },
+          colors: {
+            'dark-bg': '#121212',
+            'neon-blue': '#00d2ff',
+            'neon-orange': '#ff6b00',
+            'card-bg': '#1e1e1e',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-mont text-soft-white bg-dark-bg">
+
+  <nav class="sticky top-0 z-40 bg-dark-bg/90 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-bold"><span class="text-white">HATAY</span><span class="text-neon-blue">SOUND</span></a>
+      <div class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="index.html" class="text-gray-300 hover:text-white">Ana Sayfa</a>
+        <a href="hakkimizda.html" class="text-gray-300 hover:text-white">Hakkımızda</a>
+        <a href="hizmetlerimiz.html" class="text-neon-blue">Hizmetlerimiz</a>
+        <a href="index.html#iletisim" class="text-gray-300 hover:text-white">İletişim</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-4 py-16 md:py-24">
+    <h1 class="text-4xl md:text-5xl font-bold mb-16 text-center border-b-2 border-neon-orange inline-block pb-2 mx-auto block w-fit">Hizmetlerimiz</h1>
+    
+    <div class="space-y-16">
+      <!-- Hizmet 1 -->
+      <div class="flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-1/2"><span class="text-6xl">🔊</span></div>
+        <div class="md:w-1/2">
+          <h2 class="text-2xl font-bold text-neon-blue mb-4">Oto Ses & Görüntü Sistemleri</h2>
+          <p class="text-gray-300 leading-relaxed mb-3">Aracınıza özel premium ses sistemi kurulumları, multimedya ekran entegrasyonları, yükselteç ve hoparlör montajı. Pioneer, Alpine, Kenwood gibi dünya markalarıyla çalışıyoruz.</p>
+          <p class="text-gray-400">Faydaları: Üstün ses kalitesi, araç içi konfor, değer artışı.</p>
+        </div>
+      </div>
+      <!-- Hizmet 2 -->
+      <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+        <div class="md:w-1/2"><span class="text-6xl">🚀</span></div>
+        <div class="md:w-1/2">
+          <h2 class="text-2xl font-bold text-neon-orange mb-4">Chip Tuning & Performans</h2>
+          <p class="text-gray-300 leading-relaxed mb-3">Motor kontrol ünitesi (ECU) yazılım optimizasyonu ile güç ve tork artışı sağlıyoruz. Güvenli sınırlar içinde yakıt ekonomisi ve sürüş keyfi.</p>
+          <p class="text-gray-400">Kullanılan cihazlar: CMD Flash, KESSv2, OBD port üzerinden güvenli yazılım.</p>
+        </div>
+      </div>
+      <!-- Hizmet 3 -->
+      <div class="flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-1/2"><span class="text-6xl">🔧</span></div>
+        <div class="md:w-1/2">
+          <h2 class="text-2xl font-bold text-yellow-400 mb-4">Oto Elektrik & Arıza Tespit</h2>
+          <p class="text-gray-300 leading-relaxed mb-3">Full diagnos cihazlarıyla tüm markalara uyumlu arıza tespit ve onarım. Marş, akü, şarj sistemi, komple tesisat kontrolleri.</p>
+          <p class="text-gray-400">Faydaları: Yolda kalmayın, güvenli sürüş, erken uyarı.</p>
+        </div>
+      </div>
+      <!-- Hizmet 4 -->
+      <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+        <div class="md:w-1/2"><span class="text-6xl">✨</span></div>
+        <div class="md:w-1/2">
+          <h2 class="text-2xl font-bold text-purple-400 mb-4">Gizli Özellik Aktivasyonu</h2>
+          <p class="text-gray-300 leading-relaxed mb-3">Aracınızın fabrika çıkışı kapalı olan özelliklerini (Gündüz farı, yağmur sensörü, koltuk ısıtma vb.) orijinal yazılımla aktif ediyoruz.</p>
+          <p class="text-gray-400">Herhangi bir donanım eklemeden, yazılımsal konfor artışı.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-6 text-center border-t border-gray-800 text-gray-500 text-sm">
+    <p>&copy; 2025 Hatay Sound.</p>
+  </footer>
+
+  <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+    <a href="https://wa.me/905321234567" target="_blank" class="bg-green-500 p-4 rounded-full shadow-2xl hover:scale-110 transition"></a>
+    <a href="https://instagram.com/hataysound" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-full shadow-2xl hover:scale-110 transition"></a>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

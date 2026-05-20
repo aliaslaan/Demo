@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hatay Sound hakkında - Vizyon, misyon ve 2010'dan beri otomotiv sektöründeki tecrübemiz.">
+  <title>Hakkımızda | Hatay Sound</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { 'mont': ['Montserrat', 'sans-serif'] },
+          colors: {
+            'dark-bg': '#121212',
+            'neon-blue': '#00d2ff',
+            'neon-orange': '#ff6b00',
+            'card-bg': '#1e1e1e',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-mont text-soft-white bg-dark-bg">
+
+  <!-- NAVBAR (aynı yapı) -->
+  <nav class="sticky top-0 z-40 bg-dark-bg/90 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-bold"><span class="text-white">HATAY</span><span class="text-neon-blue">SOUND</span></a>
+      <div class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="index.html" class="text-gray-300 hover:text-white">Ana Sayfa</a>
+        <a href="hakkimizda.html" class="text-neon-blue">Hakkımızda</a>
+        <a href="hizmetlerimiz.html" class="text-gray-300 hover:text-white">Hizmetlerimiz</a>
+        <a href="index.html#iletisim" class="text-gray-300 hover:text-white">İletişim</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- İÇERİK -->
+  <main class="max-w-7xl mx-auto px-4 py-16 md:py-24">
+    <h1 class="text-4xl md:text-5xl font-bold mb-12 text-center border-b-2 border-neon-blue inline-block pb-2 mx-auto block w-fit">Hakkımızda</h1>
+    
+    <div class="grid md:grid-cols-2 gap-12 mb-16">
+      <div>
+        <h2 class="text-2xl font-semibold text-neon-orange mb-4">Vizyonumuz</h2>
+        <p class="text-gray-300 leading-relaxed">Otomotiv elektroniği ve yazılımında bölgenin en güvenilir adresi olarak, yenilikçi teknolojilerle müşteri memnuniyetini en üst düzeye çıkarmak.</p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold text-neon-orange mb-4">Misyonumuz</h2>
+        <p class="text-gray-300 leading-relaxed">Araç sahiplerinin beklentilerini aşan çözümler sunarak, her bir projede kalite ve performansı garanti etmek.</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <div class="bg-card-bg p-6 rounded-xl">
+        <h3 class="text-xl font-bold text-neon-blue mb-3">Neden Biz?</h3>
+        <p class="text-gray-400">Uzman kadro, son teknoloji cihazlar ve 15 yıllık tecrübe ile aracınız emin ellerde.</p>
+      </div>
+      <div class="bg-card-bg p-6 rounded-xl">
+        <h3 class="text-xl font-bold text-neon-blue mb-3">Hatay'daki Yerimiz</h3>
+        <p class="text-gray-400">Antakya merkezli olarak tüm Hatay ve çevre illere hizmet vermekteyiz.</p>
+      </div>
+      <div class="bg-card-bg p-6 rounded-xl">
+        <h3 class="text-xl font-bold text-neon-blue mb-3">2010'dan Beri</h3>
+        <p class="text-gray-400">Kurulduğumuz günden bu yana binlerce mutlu müşteri, yüzlerce başarılı proje.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-6 text-center border-t border-gray-800 text-gray-500 text-sm">
+    <p>&copy; 2025 Hatay Sound.</p>
+  </footer>
+
+  <!-- SABİT BUTONLAR -->
+  <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+    <a href="https://wa.me/905321234567" target="_blank" class="bg-green-500 p-4 rounded-full shadow-2xl hover:scale-110 transition"></a>
+    <a href="https://instagram.com/hataysound" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-full shadow-2xl hover:scale-110 transition"></a>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
