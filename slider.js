@@ -14,8 +14,8 @@
   // ----------------------------------------------------------------------
   const images = [
     'hsgarage.JPG', 
-    'hsgarage1.JPG',
-    'hsgarage2.JPG'
+    'hsgarage1.PNG',
+    'hsgarage2.PNG'
   ];
 
   let currentIndex = 0;
