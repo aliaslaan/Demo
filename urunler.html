@@ -42,18 +42,40 @@
 
   <!-- NAVBAR -->
   <nav class="sticky top-0 z-40 bg-dark-bg/90 backdrop-blur-md border-b border-gray-800">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html"><img src="hsgaragelogo.png" alt="HS Garage Logo" class="h-14 w-auto"></a>
-      <div class="hidden md:flex gap-6 text-sm font-medium">
-        <a href="index.html" class="text-gray-300 hover:text-white transition">Ana Sayfa</a>
-        <a href="hakkimizda.html" class="text-gray-300 hover:text-white transition">Hakkımızda</a>
-        <a href="hizmetlerimiz.html" class="text-gray-300 hover:text-white transition">Hizmetlerimiz</a>
-        <a href="urunler.html" class="text-neon-blue hover:text-white transition">Ürünler</a>
-        <a href="index.html#iletisim" class="text-gray-300 hover:text-white transition">İletişim</a>
-      </div>
-      <a href="hataysound.html" class="md:hidden text-neon-blue text-sm border border-neon-blue px-3 py-1 rounded-full">QR Menü</a>
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="index.html"><img src="hsgaragelogo.png" alt="HS Garage Logo" class="h-14 w-auto"></a>
+    
+    <!-- Masaüstü Menü (hidden md:flex) -->
+    <div class="hidden md:flex gap-6 text-sm font-medium">
+      <a href="index.html" class="text-neon-blue hover:text-white transition">Ana Sayfa</a>
+      <a href="hakkimizda.html" class="text-gray-300 hover:text-white transition">Hakkımızda</a>
+      <a href="hizmetlerimiz.html" class="text-gray-300 hover:text-white transition">Hizmetlerimiz</a>
+      <a href="urunler.html" class="text-gray-300 hover:text-white transition">Ürünler</a>
+      <a href="index.html#iletisim" class="text-gray-300 hover:text-white transition">İletişim</a>
     </div>
-  </nav>
+
+    <!-- Mobil: QR Menü butonu + Hamburger ikonu -->
+    <div class="flex items-center gap-3 md:hidden">
+      <a href="hataysound.html" class="text-neon-blue text-sm border border-neon-blue px-3 py-1 rounded-full">QR Menü</a>
+      <button id="menu-btn" class="text-white focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobil Açılır Menü (başlangıçta gizli) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-dark-bg/95 backdrop-blur-lg border-t border-gray-700 px-4 py-4 flex flex-col gap-3 text-center">
+    <a href="index.html" class="text-neon-blue py-2 hover:bg-white/10 rounded-lg transition">Ana Sayfa</a>
+    <a href="hakkimizda.html" class="text-gray-300 py-2 hover:bg-white/10 rounded-lg transition">Hakkımızda</a>
+    <a href="hizmetlerimiz.html" class="text-gray-300 py-2 hover:bg-white/10 rounded-lg transition">Hizmetlerimiz</a>
+    <a href="urunler.html" class="text-gray-300 py-2 hover:bg-white/10 rounded-lg transition">Ürünler</a>
+    <a href="index.html#iletisim" class="text-gray-300 py-2 hover:bg-white/10 rounded-lg transition">İletişim</a>
+  </div>
+</nav>
+
 
   <!-- Hero -->
   <section class="py-16 text-center">
