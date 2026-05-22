@@ -26,10 +26,70 @@
     }
   </script>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* --- Hizmet/Ürün Showcase Kartları --- */
+    .showcase-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.25rem;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      cursor: pointer;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .showcase-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.6);
+    }
+    .showcase-card img.card-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      z-index: 0;
+    }
+    .showcase-card:hover img.card-bg-img {
+      transform: scale(1.06);
+    }
+    .showcase-card .card-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .showcase-card .card-content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+    }
+    /* Placeholder görseli için gradient arka plan */
+    .placeholder-bg-hizmet {
+      background: linear-gradient(135deg, #0a2a3a 0%, #005f7f 50%, #00d2ff22 100%);
+    }
+    .placeholder-bg-urun {
+      background: linear-gradient(135deg, #2a1200 0%, #7f2f00 50%, #ff6b0022 100%);
+    }
+    /* Görsel yok iken dekoratif ikonlar */
+    .card-deco-icon {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9rem;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body class="font-mont text-soft-white bg-dark-bg">
 
-  <!-- NAVBAR (Ürünler linki eklendi) -->
+  <!-- NAVBAR -->
   <nav class="sticky top-0 z-40 bg-dark-bg/90 backdrop-blur-md border-b border-gray-800">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="index.html"><img src="hsgaragelogo.png" alt="HS Garage Logo" class="h-14 w-auto"></a>
@@ -53,60 +113,166 @@
       </h1>
       <p class="text-lg md:text-2xl lg:text-3xl font-light mb-4 text-gray-200">Oto Elektrik & Chip Tuning</p>
       <p class="text-base md:text-xl text-gray-300 mb-8">"Performans ve Teknolojinin Buluştuğu Nokta"</p>
-      <a href="#hizmetler" class="px-8 py-4 bg-neon-blue text-black font-bold rounded-full text-lg hover:bg-cyan-400 transition-all duration-300 btn-glow">Hizmetlerimizi İncele</a>
+      <a href="#showcase" class="px-8 py-4 bg-neon-blue text-black font-bold rounded-full text-lg hover:bg-cyan-400 transition-all duration-300 btn-glow">Hizmetlerimizi İncele</a>
     </div>
   </section>
 
-  <!-- HİZMETLER ÖZET -->
-  <section id="hizmetler" class="py-16 md:py-24 px-4 bg-dark-bg/50">
-    <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12 border-b-2 border-neon-blue inline-block pb-2">Hizmetlerimiz</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="service-card bg-card-bg p-6 rounded-xl shadow-lg">
-          <div class="text-neon-blue text-5xl mb-4">🔊</div>
-          <h3 class="text-xl font-semibold mb-2">Oto Ses Sistemleri</h3>
-          <p class="text-gray-400 text-sm">Premium ses ve görüntü çözümleri.</p>
-        </div>
-        <div class="service-card bg-card-bg p-6 rounded-xl shadow-lg">
-          <div class="text-neon-orange text-5xl mb-4">🚀</div>
-          <h3 class="text-xl font-semibold mb-2">Chip Tuning</h3>
-          <p class="text-gray-400 text-sm">Motor performans yazılımı.</p>
-        </div>
-        <div class="service-card bg-card-bg p-6 rounded-xl shadow-lg">
-          <div class="text-yellow-400 text-5xl mb-4">🔧</div>
-          <h3 class="text-xl font-semibold mb-2">Oto Elektrik</h3>
-          <p class="text-gray-400 text-sm">Arıza tespit ve onarım.</p>
-        </div>
-        <div class="service-card bg-card-bg p-6 rounded-xl shadow-lg">
-          <div class="text-purple-400 text-5xl mb-4">✨</div>
-          <h3 class="text-xl font-semibold mb-2">Gizli Özellik</h3>
-          <p class="text-gray-400 text-sm">Aktivasyon ve kodlama.</p>
-        </div>
+  <!-- =============================================
+       HİZMET & ÜRÜN SHOWCASE (2'ye bölünmüş alan)
+       ============================================= -->
+  <section id="showcase" class="py-16 md:py-24 px-4 bg-dark-bg/50">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Başlık -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold border-b-2 border-neon-blue inline-block pb-2">Keşfedin</h2>
+        <p class="text-gray-400 mt-4 text-base md:text-lg">Hizmetlerimizi ve ürünlerimizi inceleyin</p>
       </div>
-      <a href="hizmetlerimiz.html" class="inline-block mt-8 text-neon-orange hover:underline font-semibold">Tüm Hizmetleri İncele →</a>
+
+      <!-- İki Kart Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+
+        <!-- ── HİZMETLER KARTI ── -->
+        <a href="hizmetlerimiz.html" class="showcase-card placeholder-bg-hizmet group">
+          <!--
+            GÖRSEL EKLEMEK İÇİN:
+            Aşağıdaki satırın başındaki <!-- işaretini kaldırın ve src'yi kendi görselinizle değiştirin.
+            <img src="hizmet-gorsel.jpg" alt="Hizmetlerimiz" class="card-bg-img">
+          -->
+          <!-- Görsel yokken dekoratif ikon -->
+          <span class="card-deco-icon">🔧</span>
+
+          <!-- Overlay gradyan -->
+          <div class="card-overlay" style="background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);"></div>
+
+          <!-- İçerik -->
+          <div class="card-content">
+            <!-- Etiketler -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-semibold bg-neon-blue/20 border border-neon-blue/40 text-neon-blue px-3 py-1 rounded-full">Chip Tuning</span>
+              <span class="text-xs font-semibold bg-neon-blue/20 border border-neon-blue/40 text-neon-blue px-3 py-1 rounded-full">Oto Elektrik</span>
+              <span class="text-xs font-semibold bg-neon-blue/20 border border-neon-blue/40 text-neon-blue px-3 py-1 rounded-full">Oto Ses</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-2">Hizmetlerimiz</h3>
+            <p class="text-gray-300 text-sm mb-5 leading-relaxed">Motor yazılımı, oto ses sistemleri, elektrik arıza tespiti ve gizli özellik aktivasyonu.</p>
+            <span class="inline-flex items-center gap-2 bg-neon-blue text-black font-bold px-6 py-3 rounded-full text-sm group-hover:bg-cyan-400 transition-all">
+              Görüntüle
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- ── ÜRÜNLER KARTI ── -->
+        <a href="urunler.html" class="showcase-card placeholder-bg-urun group">
+          <!--
+            GÖRSEL EKLEMEK İÇİN:
+            Aşağıdaki satırın başındaki <!-- işaretini kaldırın ve src'yi kendi görselinizle değiştirin.
+            <img src="urun-gorsel.jpg" alt="Ürünlerimiz" class="card-bg-img">
+          -->
+          <!-- Görsel yokken dekoratif ikon -->
+          <span class="card-deco-icon">🔊</span>
+
+          <!-- Overlay gradyan -->
+          <div class="card-overlay" style="background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);"></div>
+
+          <!-- İçerik -->
+          <div class="card-content">
+            <!-- Etiketler -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-semibold bg-neon-orange/20 border border-neon-orange/40 text-neon-orange px-3 py-1 rounded-full">Hoparlörler</span>
+              <span class="text-xs font-semibold bg-neon-orange/20 border border-neon-orange/40 text-neon-orange px-3 py-1 rounded-full">Amplifikatörler</span>
+              <span class="text-xs font-semibold bg-neon-orange/20 border border-neon-orange/40 text-neon-orange px-3 py-1 rounded-full">Ekranlar</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-2">Ürünlerimiz</h3>
+            <p class="text-gray-300 text-sm mb-5 leading-relaxed">Premium araç içi ses ve görüntü sistemleri, aksesuarlar ve çok daha fazlası.</p>
+            <span class="inline-flex items-center gap-2 bg-neon-orange text-white font-bold px-6 py-3 rounded-full text-sm group-hover:bg-orange-500 transition-all btn-orange-glow">
+              Görüntüle
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+            </span>
+          </div>
+        </a>
+
+      </div>
+      <!-- /İki Kart Grid -->
+
     </div>
   </section>
+  <!-- /SHOWCASE -->
 
   <!-- İLETİŞİM -->
   <section id="iletisim" class="py-16 md:py-24 px-4 max-w-7xl mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center border-b-2 border-neon-blue inline-block pb-2 mx-auto block w-fit">İletişim</h2>
     <div class="grid md:grid-cols-2 gap-10">
+
+      <!-- Sol: Bilgiler + Harita -->
       <div class="space-y-6">
-        <div><span class="text-neon-blue text-2xl">📍</span>Güzelburç Mah. 31175.Sk Antakya/Hatay (Şehit Özen Polis Karakolu Karşısı)</div>
-        <div><span class="text-neon-blue text-2xl">📞</span> <a href="tel:+90583468590" class="hover:text-neon-blue">+90 538 346 8590</a></div>
-        <div><span class="text-neon-blue text-2xl">⏰</span> Pzt-Cmt: 08:00-19:00</div>
-        <iframe src="https://maps.app.goo.gl/7HRL7PEbnFDY4iie7"></iframe>
+        <div class="flex items-start gap-3">
+          <span class="text-neon-blue text-2xl flex-shrink-0">📍</span>
+          <span>Güzelburç Mah. 31175.Sk Antakya/Hatay<br><span class="text-gray-400 text-sm">(Şehit Özen Polis Karakolu Karşısı)</span></span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-neon-blue text-2xl">📞</span>
+          <a href="tel:+905383468590" class="hover:text-neon-blue transition">+90 538 346 8590</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-neon-blue text-2xl">⏰</span>
+          <span>Pzt–Cmt: 08:00–19:00</span>
+        </div>
+
+        <!-- Google Maps Embed (düzeltilmiş) -->
+        <div class="rounded-xl overflow-hidden border border-gray-700 shadow-lg" style="height: 280px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3189.0!2d36.1600!3d36.2000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDEyJzAwLjAiTiAzNsKwMDknMzYuMCJF!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+            width="100%"
+            height="280"
+            style="border:0; display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Hatay Sound Konum">
+          </iframe>
+        </div>
+        <!-- Harita notu: Gerçek konumunuz için maps.app.goo.gl/7HRL7PEbnFDY4iie7 linkinden embed kodu alın -->
       </div>
+
+      <!-- Sağ: İletişim Formu -->
       <div class="bg-card-bg p-6 rounded-xl">
-       <h3 class="text-2xl font-semibold mb-6 text-neon-blue">Bize Ulaşın</h3>
-<form id="contact-form" class="space-y-4">
-  <input type="text" id="whatsapp-name" placeholder="Adınız" required class="w-full px-4 py-3 bg-dark-bg border border-gray-600 rounded-lg focus:outline-none focus:border-neon-blue text-white">
-  <input type="tel" id="whatsapp-phone" placeholder="Telefon" required class="w-full px-4 py-3 bg-dark-bg border border-gray-600 rounded-lg focus:outline-none focus:border-neon-blue text-white">
-  <textarea rows="4" id="whatsapp-message" placeholder="Mesajınız" required class="w-full px-4 py-3 bg-dark-bg border border-gray-600 rounded-lg focus:outline-none focus:border-neon-blue text-white"></textarea>
-  <button type="submit" class="w-full py-3 bg-neon-orange hover:bg-orange-600 text-white font-bold rounded-lg transition btn-orange-glow">Gönder</button>
-</form>
-<div id="form-message" class="mt-4 text-center text-green-400 hidden">✅ WhatsApp'a yönlendiriliyorsunuz...</div>
+        <h3 class="text-2xl font-semibold mb-6 text-neon-blue">Bize Ulaşın</h3>
+        <form id="contact-form" class="space-y-4" onsubmit="sendWhatsApp(event)">
+          <input
+            type="text"
+            id="whatsapp-name"
+            placeholder="Adınız"
+            required
+            class="w-full px-4 py-3 bg-dark-bg border border-gray-600 rounded-lg focus:outline-none focus:border-neon-blue text-white"
+          >
+          <input
+            type="tel"
+            id="whatsapp-phone"
+            placeholder="Telefon"
+            required
+            class="w-full px-4 py-3 bg-dark-bg border border-gray-600 rounded-lg focus:outline-none focus:border-neon-blue text-white"
+          >
+          <textarea
+            rows="4"
+            id="whatsapp-message"
+            placeholder="Mesajınız"
+            required
+            class="w-full px-4 py-3 bg-dark-bg border border-gray-600 rounded-lg focus:outline-none focus:border-neon-blue text-white"
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full py-3 bg-neon-orange hover:bg-orange-600 text-white font-bold rounded-lg transition btn-orange-glow flex items-center justify-center gap-2"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+            </svg>
+            WhatsApp ile Gönder
+          </button>
+        </form>
+        <div id="form-message" class="mt-4 text-center text-green-400 hidden">✅ WhatsApp'a yönlendiriliyorsunuz...</div>
       </div>
+
     </div>
   </section>
 
@@ -116,7 +282,7 @@
 
   <!-- SABİT BUTONLAR -->
   <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
-    <a href="https://wa.me/905321234567" target="_blank" class="bg-green-500 p-4 rounded-full shadow-2xl hover:scale-110 transition flex items-center justify-center" aria-label="WhatsApp">
+    <a href="https://wa.me/905383468590" target="_blank" class="bg-green-500 p-4 rounded-full shadow-2xl hover:scale-110 transition flex items-center justify-center" aria-label="WhatsApp">
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 16 16">
         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
       </svg>
@@ -130,5 +296,33 @@
 
   <script src="slider.js"></script>
   <script src="main.js"></script>
+
+  <script>
+    // WhatsApp Form Gönderimi
+    function sendWhatsApp(e) {
+      e.preventDefault();
+
+      const name    = document.getElementById('whatsapp-name').value.trim();
+      const phone   = document.getElementById('whatsapp-phone').value.trim();
+      const message = document.getElementById('whatsapp-message').value.trim();
+
+      if (!name || !message) return;
+
+      const text = encodeURIComponent(
+        `Merhaba, ben ${name}.\n` +
+        (phone ? `Telefon: ${phone}\n` : '') +
+        `Mesaj: ${message}`
+      );
+
+      // İletişim formunun mesaj göster
+      const formMsg = document.getElementById('form-message');
+      formMsg.classList.remove('hidden');
+      setTimeout(() => formMsg.classList.add('hidden'), 4000);
+
+      // WhatsApp'a yönlendir (numaranız: 905383468590)
+      window.open(`https://wa.me/905383468590?text=${text}`, '_blank');
+    }
+  </script>
+
 </body>
 </html>
