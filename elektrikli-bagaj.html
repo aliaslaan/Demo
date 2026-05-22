@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Hatay Sound | Ses Sistemleri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { 'mont': ['Montserrat', 'sans-serif'] },
+          colors: { 'dark-bg': '#121212', 'neon-blue': '#00d2ff', 'neon-orange': '#ff6b00', 'card-bg': '#1e1e1e' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-mont text-soft-white bg-dark-bg">
+
+  <!-- NAVBAR (aynı) -->
+  <nav class="sticky top-0 z-40 bg-dark-bg/90 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html"><img src="hsgaragelogo.png" alt="Logo" class="h-14 w-auto"></a>
+      <div class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="index.html" class="text-gray-300 hover:text-white">Ana Sayfa</a>
+        <a href="hakkimizda.html" class="text-gray-300 hover:text-white">Hakkımızda</a>
+        <a href="hizmetlerimiz.html" class="text-gray-300 hover:text-white">Hizmetlerimiz</a>
+        <a href="urunler.html" class="text-neon-blue hover:text-white">Ürünler</a>
+        <a href="index.html#iletisim" class="text-gray-300 hover:text-white">İletişim</a>
+      </div>
+      <a href="hataysound.html" class="md:hidden text-neon-blue text-sm border border-neon-blue px-3 py-1 rounded-full">QR Menü</a>
+    </div>
+  </nav>
+
+  <section class="py-12 text-center">
+    <h1 class="text-4xl font-bold"><span class="text-neon-blue">Elektrikli Bagaj</span></h1>
+    <p class="text-gray-400 mt-2">Otomatik bagaj kitleri</p>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 pb-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Ürün 1 -->
+      <div class="bg-card-bg rounded-xl overflow-hidden shadow-lg">
+        <img src="https://picsum.photos/id/107/400/250" alt="Amplifikatör" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2">JBL 4 Kanal Amplifikatör</h3>
+          <p class="text-gray-400 text-sm">Yüksek güç çıkışı, net ses kalitesi, termal koruma.</p>
+        </div>
+      </div>
+      
+      <!-- Ürün 2 -->
+      <div class="bg-card-bg rounded-xl overflow-hidden shadow-lg">
+        <img src="https://picsum.photos/id/96/400/250" alt="Teyp" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2">Pioneer Apple CarPlay Teyp</h3>
+          <p class="text-gray-400 text-sm">Dokunmatik ekran, Bluetooth, DAB+ radyo.</p>
+        </div>
+      </div>
+      
+      <!-- Ürün 3 -->
+      <div class="bg-card-bg rounded-xl overflow-hidden shadow-lg">
+        <img src="https://picsum.photos/id/155/400/250" alt="Subwoofer" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2">Hertz 12" Subwoofer</h3>
+          <p class="text-gray-400 text-sm">Derin bas, sağlam kasa, 1200W max güç.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-10">
+      <a href="urunler.html" class="text-neon-blue hover:underline">← Tüm kategorilere dön</a>
+    </div>
+  </main>
+
+  <footer class="py-6 text-center border-t border-gray-800 text-gray-500 text-sm">
+    <p>&copy; 2026 Petunya Art. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <!-- Sabit butonlar (öncekiyle aynı) -->
+  <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+    <a href="https://wa.me/905321234567" target="_blank" class="bg-green-500 p-4 rounded-full shadow-2xl hover:scale-110 transition flex items-center justify-center">📱</a>
+    <a href="https://instagram.com/hataysound" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-full shadow-2xl hover:scale-110 transition flex items-center justify-center">📷</a>
+  </div>
+</body>
+</html>
