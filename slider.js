@@ -13,9 +13,9 @@
   // Dilediğin kadar görsel ekleyebilir veya mevcut linkleri değiştirebilirsin.
   // ----------------------------------------------------------------------
   const images = [
-    'hsgarage.jpg', 
-    'hsgarage1.png',
-    'hsgarage2.png'
+    'hs11.jpeg', 
+    'hs113.jpeg',
+    'hs112.jpeg'
   ];
 
   let currentIndex = 0;
