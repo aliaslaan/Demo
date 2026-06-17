@@ -16,10 +16,47 @@
       }
     }
   </script>
+  <style>
+    /* Logo Slider Animasyonu */
+    @keyframes scrollLogos {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .logo-slider-track {
+      display: flex;
+      width: calc(200px * 10);
+      animation: scrollLogos 20s linear infinite;
+    }
+    .logo-slider-track:hover {
+      animation-play-state: paused;
+    }
+    .logo-item {
+      flex: 0 0 auto;
+      width: 160px;
+      margin: 0 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      filter: grayscale(20%);
+      transition: filter 0.3s;
+    }
+    .logo-item:hover {
+      filter: grayscale(0%);
+    }
+    .logo-item img {
+      max-width: 100%;
+      height: 70px;
+      object-fit: contain;
+    }
+    @media (max-width: 640px) {
+      .logo-item { width: 120px; margin: 0 15px; }
+      .logo-item img { height: 50px; }
+    }
+  </style>
 </head>
 <body class="font-mont text-soft-white bg-dark-bg">
 
-  <!-- NAVBAR (aynı) -->
+  <!-- NAVBAR -->
   <nav class="sticky top-0 z-40 bg-dark-bg/90 backdrop-blur-md border-b border-gray-800">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="index.html"><img src="hsgaragelogo.png" alt="Logo" class="h-14 w-auto"></a>
@@ -34,54 +71,108 @@
     </div>
   </nav>
 
+  <!-- Sayfa başlığı -->
   <section class="py-12 text-center">
-    <h1 class="text-4xl font-bold"><span class="text-neon-blue">🔊 Ses Sistemleri</span></h1>
-    <p class="text-gray-400 mt-2">Premium ses ve görüntü çözümleri</p>
+    <h1 class="text-4xl font-bold"><span class="text-neon-blue">Ses Sistemleri</span></h1>
+    <p class="text-gray-400 mt-2">Aracınızda müziğin tadını çıkarın</p>
   </section>
 
   <main class="max-w-7xl mx-auto px-4 pb-16">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- İŞBİRLİKÇİLER BÖLÜMÜ (Kayan Logo Slider) -->
+    <div class="mt-20 pt-10 border-t border-gray-800">
+      <div class="relative overflow-hidden w-full bg-card-bg/40 py-8 rounded-2xl">
+        <div class="logo-slider-track flex">
+          <div class="logo-item"><img src="varta.png" alt="Varta"></div>
+          <div class="logo-item"><img src="bosch.png" alt="Bosch"></div>
+          <div class="logo-item"><img src="turbo.png" alt="Turbo"></div>
+          <div class="logo-item"><img src="mutlu.png" alt="Mutlu"></div>
+          <!-- Tekrarlar (sonsuz efekt) -->
+          <div class="logo-item"><img src="varta.png" alt="Varta"></div>
+          <div class="logo-item"><img src="bosch.png" alt="Bosch"></div>
+          <div class="logo-item"><img src="turbo.png" alt="Turbo"></div>
+          <div class="logo-item"><img src="mutlu.png" alt="Mutlu"></div>
+          <div class="logo-item"><img src="varta.png" alt="Varta"></div>
+          <div class="logo-item"><img src="bosch.png" alt="Bosch"></div>
+          <div class="logo-item"><img src="turbo.png" alt="Turbo"></div>
+          <div class="logo-item"><img src="mutlu.png" alt="Mutlu"></div>
+        </div>
+      </div>
+      <p class="text-center text-gray-500 text-sm mt-4">İş ortaklarımızla kaliteyi garantiliyoruz</p>
+    </div>
+
+    <br>
+
+    <!-- ÜRÜNLER LİSTESİ (6 adet) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
       
       <!-- Ürün 1 -->
       <div class="bg-card-bg rounded-xl overflow-hidden shadow-lg">
-        <img src="https://picsum.photos/id/107/400/250" alt="Amplifikatör" class="w-full h-48 object-cover">
+        <img src="apocalypse.jpeg" alt="Apocalypse" class="w-full h-48 object-cover">
         <div class="p-5">
-          <h3 class="text-xl font-semibold mb-2">JBL 4 Kanal Amplifikatör</h3>
-          <p class="text-gray-400 text-sm">Yüksek güç çıkışı, net ses kalitesi, termal koruma.</p>
+          <h3 class="text-xl font-semibold mb-2 text-white">Apocalypse</h3>
+          <p class="text-gray-400 text-sm">Yüksek güçlü subwoofer, derin ve etkileyici bas.</p>
         </div>
       </div>
       
       <!-- Ürün 2 -->
       <div class="bg-card-bg rounded-xl overflow-hidden shadow-lg">
-        <img src="https://picsum.photos/id/96/400/250" alt="Teyp" class="w-full h-48 object-cover">
+        <img src="dynamat.jpeg" alt="Dynamat" class="w-full h-48 object-cover">
         <div class="p-5">
-          <h3 class="text-xl font-semibold mb-2">Pioneer Apple CarPlay Teyp</h3>
-          <p class="text-gray-400 text-sm">Dokunmatik ekran, Bluetooth, DAB+ radyo.</p>
+          <h3 class="text-xl font-semibold mb-2 text-white">Dynamat</h3>
+          <p class="text-gray-400 text-sm">Ses yalıtım malzemesi, titreşim ve gürültü azaltıcı.</p>
         </div>
       </div>
       
       <!-- Ürün 3 -->
       <div class="bg-card-bg rounded-xl overflow-hidden shadow-lg">
-        <img src="https://picsum.photos/id/155/400/250" alt="Subwoofer" class="w-full h-48 object-cover">
+        <img src="edson.jpeg" alt="Edson" class="w-full h-48 object-cover">
         <div class="p-5">
-          <h3 class="text-xl font-semibold mb-2">Hertz 12" Subwoofer</h3>
-          <p class="text-gray-400 text-sm">Derin bas, sağlam kasa, 1200W max güç.</p>
+          <h3 class="text-xl font-semibold mb-2 text-white">Edson</h3>
+          <p class="text-gray-400 text-sm">Amfi ve hoparlör seti, net ve dolgun ses.</p>
+        </div>
+      </div>
+
+      <!-- Ürün 4 -->
+      <div class="bg-card-bg rounded-xl overflow-hidden shadow-lg">
+        <img src="forx.jpeg" alt="Forx" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2 text-white">Forx</h3>
+          <p class="text-gray-400 text-sm">Tümleşik ses sistemi, kompakt tasarım ve yüksek performans.</p>
+        </div>
+      </div>
+
+      <!-- Ürün 5 -->
+      <div class="bg-card-bg rounded-xl overflow-hidden shadow-lg">
+        <img src="mobas.jpeg" alt="Mobas" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2 text-white">Mobas</h3>
+          <p class="text-gray-400 text-sm">Kompakt hoparlör, taşınabilir ve güçlü ses.</p>
+        </div>
+      </div>
+
+      <!-- Ürün 6 -->
+      <div class="bg-card-bg rounded-xl overflow-hidden shadow-lg">
+        <img src="pionner.jpeg" alt="Pioneer" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2 text-white">Pioneer</h3>
+          <p class="text-gray-400 text-sm">Öncü ses teknolojisi, kaliteli hoparlör ve müzik keyfi.</p>
         </div>
       </div>
     </div>
-    <div class="text-center mt-10">
+
+    <!-- "Tüm kategorilere dön" linki -->
+    <div class="text-center mt-14 pb-4">
       <a href="urunler.html" class="text-neon-blue hover:underline">← Tüm kategorilere dön</a>
     </div>
+
   </main>
 
   <footer class="py-6 text-center border-t border-gray-800 text-gray-500 text-sm">
     <p>&copy; 2026 Petunya Art. Tüm hakları saklıdır.</p>
   </footer>
 
-  <!-- Sabit butonlar (öncekiyle aynı) -->
-  <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
-    <a href="https://wa.me/905321234567" target="_blank" class="bg-green-500 p-4 rounded-full shadow-2xl hover:scale-110 transition flex items-center justify-center">📱</a>
-    <a href="https://instagram.com/hataysound" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-full shadow-2xl hover:scale-110 transition flex items-center justify-center">📷</a>
-  </div>
+  <!-- Sabit butonlar tamamen kaldırıldı (WhatsApp & Instagram yok) -->
+
 </body>
 </html>
